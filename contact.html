@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me/Feedback</title>
+</head>
+<body>
+    <h1>Tottenham Media</h1>
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="performance.html">Season Performance</a></li>
+      <li><a href="bestplays.html">Best Spurs Plays</a></li>
+      <li><a href="favs.html">My Favorite Players</a></li>
+      <li><a href="merch.html">Merchandise</a></li>
+      <li><a href="contact.html">Contact Me</a></li>
+    </ul>
+    <h1>Customer Feedback/Contact Me</h1>
+      <form action="mailto:rlee3@babson.edu" method="POST">
+        <fieldset>
+          <legend class="dark">Your Information:</legend>
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="Name"
+            placeholder="Enter your name here"
+          />
+          <br />
+          <br />
+
+          <label for="email">Email:</label>
+          <input
+            type="text"
+            id="email"
+            name="Email"
+            placeholder="Enter your email here"
+          />
+        </fieldset>
+        <fieldset>
+          <legend class="dark">Your Review:</legend>
+          <label for="products">Which merchandise product did you buy? </label>
+          <select name="products" id="products">
+            <option value="">--Please select a product--</option>
+            <option value="A">Spurs 2020/21 Home Jersey</option>
+            <option value="B">Spurs 2020/21 Away Jersey</option>
+            <option value="C">Spurs 2020/21 Third Jersey</option>
+          </select>
+          <br />
+          <br />
+          Why did you buy this product?
+          <label
+            >Aesthetic appeal
+            <input type="radio" name="great" value="great" />
+          </label>
+          <label
+            >Fan of Spurs
+            <input type="radio" name="awesome" value="awesome" />
+          </label>
+          <label>Bought as gift<input type="radio" name="good" value="good" /></label>
+          <br />
+          <br />
+          <label for="comments">Leave your feedback of the website here:</label>
+          <br />
+          <textarea id="comments" name="comments" rows="5" cols="50"></textarea>
+          <br />
+          <input
+            type="checkbox"
+            id="checkbox"
+            name="update"
+            value="update"
+            checked
+          />
+          <label for="checkbox">Sign me up for email updates</label>
+          <br />
+          <br />
+          <button type="submit" name="submit-button">Submit</button>
+
+          <button type="reset" name="reset-button">Reset</button>
+        </fieldset>
+      </form>
+</body>
+</html>
