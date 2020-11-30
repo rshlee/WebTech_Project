@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Favorite Players</title>
-</head>
-<body>
+    <link rel="stylesheet" href="styles/navbar.css" />
+    <style>
+      table,
+      th,
+      td {
+        border: darkblue 2px solid;
+        border-collapse: collapse;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        padding: 15px;
+      }
+      .center {
+        text-align: center;
+        font-size: 20pt;
+      }
+      .big {
+        font-size: 18pt;
+      }
+      h2 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
     <h1>Tottenham Media</h1>
     <ul>
       <li><a href="index.html">HOME</a></li>
@@ -14,6 +36,144 @@
       <li><a href="favs.html">My Favorite Players</a></li>
       <li><a href="merch.html">Merchandise</a></li>
       <li><a href="contact.html">Contact Me</a></li>
+      <li><a href="sitemap.html">Sitemap</a></li>
     </ul>
-</body>
+    <br />
+    <h2>My Favorite Spurs Players</h2>
+    <table>
+      <tr>
+        <td class="center">Son Heung Min</td>
+        <td>
+          <img
+            src="images/shm.png"
+            height="300"
+            title="Son Heung Min"
+            alt="Son Heung Min"
+          />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button
+            onclick="changeColor(1)"
+          >
+            Change Color!
+          </button>
+        </td>
+        <td class="big" id="son">
+          As biased as this choice may be, Sonny has got to be my favorite
+          player on the Spurs. A left-winger from South Korea, Son has been an
+          integral part of the team since his arrival. He's netted some of the
+          most crucial goals in the recent seasons, and even won the Goal of the
+          Season in the 2019/20 campaign. He is now a globally recognized star
+          and one of the best in his position in the world. As a fellow South
+          Korean, I am very proud that he is able to put our small country on
+          the map in a European-dominated sport.
+        </td>
+      </tr>
+      <tr>
+        <td class="center">Harry Kane</td>
+        <td>
+          <img
+            src="images/hk.png"
+            height="300"
+            title="Harry Kane"
+            alt="Harry Kane"
+          />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button
+          onclick="changeColor(2)"
+        >
+          Change Color!
+        </button>
+        </td>
+        <td class="big" id="kane">
+          Harry Kane is a straight fan favorite. He is the captain of not only
+          this Tottenham side, but even for his nation, England. Kane is one of
+          the deadliest strikers in the world, and is on his way to break the
+          EPL all-time goal scoring record that is currently held by Alan
+          Shearer. When I see Kane's name on the team sheet, I know it's going
+          to be a tough day for the opponents and I love watching his tenacity
+          and leadership on the pitch. He is always ready to score or provide
+          for his teammates and is simply a joy to watch.
+        </td>
+      </tr>
+      <tr>
+        <td class="center">Toby Alderweireld</td>
+        <td>
+          <img
+            src="images/ta.png"
+            height="300"
+            title="Toby Alderweireld"
+            alt="Toby Alderweireld"
+          />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button
+            onclick="changeColor(3)"
+          >
+            Change Color!
+          </button>
+        </td>
+        <td class="big" id="toby">
+          Toby Alderweireld, a center back from Belgium, is one of the longest
+          serving members of this Tottenham squad. Although a defender by
+          position, he boasts excellent technique on the ball and an expansive
+          passing range that could unlock opposition defences in one pass. Not
+          to mention, Toby is always willing to put his body on the line to make
+          that goal-saving tackle week-in week-out and it is admirable to see
+          his passion for the team.
+        </td>
+      </tr>
+      <tr>
+        <td class="center">Pierre-Emile Højbjerg</td>
+        <td>
+          <img
+            src="images/peh.png"
+            height="300"
+            title="Pierre-Emile Hojbjerg"
+            alt="Pierre-Emile Hojbjerg"
+          />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button
+            onclick="changeColor(4)"
+          >
+            Change Color!
+          </button>
+        </td>
+        <td class="big" id="pierre">
+          Pierre-Emile Højbjerg is a new signing this season. Initially, the
+          Danish midfielder wasn't met with great response from the fan-base,
+          but throughout this season he is proving every doubter wrong. If
+          anything, he could be the signing of the season throughout the whole
+          league. As a defensive midfielder, he puts in hard work to cover the
+          backline while also providing a beautiful passing game to support the
+          offense. In fact, he currently leads the team in tackles made and
+          passes made, showing his tremendous contribution to our success.
+        </td>
+      </tr>
+    </table>
+  </body>
+  <script>
+    function changeColor(number) {
+      if (number == 1) {
+        if ((document.getElementById("son").style.color == "red")) {
+          document.getElementById("son").style.color = "black";
+        } else {
+          document.getElementById("son").style.color = "red";
+        }
+      }
+      if (number == 2) {
+        if ((document.getElementById("kane").style.color == "red")) {
+          document.getElementById("kane").style.color = "black";
+        } else {
+          document.getElementById("kane").style.color = "red";
+        }
+      }
+      if (number == 3) {
+        if ((document.getElementById("toby").style.color == "red")) {
+          document.getElementById("toby").style.color = "black";
+        } else {
+          document.getElementById("toby").style.color = "red";
+        }
+      }
+      if (number == 4) {
+        if ((document.getElementById("pierre").style.color == "red")) {
+          document.getElementById("pierre").style.color = "black";
+        } else {
+          document.getElementById("pierre").style.color = "red";
+        }
+      }
+    }
+  </script>
 </html>

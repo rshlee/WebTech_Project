@@ -4,6 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Buy Merchandise</title>
+    <link rel="stylesheet" href="styles/navbar.css" />
+    <style>
+      a:link {
+        text-decoration: none;
+      }
+      a:visited {
+        text-decoration: none;
+      }
+      table,
+      th,
+      td {
+        border: darkblue 2px solid;
+        border-collapse: collapse;
+        padding: 15px;
+      }
+      table {
+        position: relative;
+        left: 300px;
+      }
+    </style>
   </head>
   <body>
     <h1>Tottenham Media</h1>
@@ -14,10 +34,12 @@
       <li><a href="favs.html">My Favorite Players</a></li>
       <li><a href="merch.html">Merchandise</a></li>
       <li><a href="contact.html">Contact Me</a></li>
+      <li><a href="sitemap.html">Sitemap</a></li>
     </ul>
+    <br />
     <table>
       <caption>
-        <strong>Tottenham Hotspur Merchandise</strong> 
+        <strong>Tottenham Hotspur Merchandise</strong>
       </caption>
 
       <tr>
@@ -26,13 +48,17 @@
           <img
             src="images/homejersey.jpg"
             alt="Spurs Home Jersey"
-            width="150"
+            width="150px"
+            height="136px"
+            onmouseover="big(this)"
+            onmouseout="normal(this)"
           />
         </td>
         <td>$155.00</td>
         <td>
           <a
             href="https://shop.tottenhamhotspur.com/product/adult-elite-spurs-home-shirt-2020-21/emhss20/"
+            target="_blank"
             role="button"
             class="button"
             >Buy</a
@@ -45,13 +71,17 @@
           <img
             src="images/awayjersey.jpg"
             alt="Spurs Away Jersey"
-            width="150"
+            width="150px"
+            height="136px"
+            onmouseover="big(this)"
+            onmouseout="normal(this)"
           />
         </td>
         <td>$155.00</td>
         <td>
           <a
             href="https://shop.tottenhamhotspur.com/category/spurs-away-kit?mininav"
+            target="_blank"
             role="button"
             class="button"
             >Buy</a
@@ -61,13 +91,36 @@
       <tr>
         <td>Spurs Third Jersey</td>
         <td>
-          <img src="images/thirdkit.jpg" alt="Spurs Third Jersey" width="150" />
+          <img
+            src="images/thirdkit.jpg"
+            alt="Spurs Third Jersey"
+            width="150px"
+            height="136px"
+            onmouseover="big(this)"
+            onmouseout="normal(this)"
+          />
         </td>
         <td>$155.00</td>
         <td>
-          <a href="https://www.apple.com/" role="button" class="button">Buy</a>
+          <a
+            href="https://shop.tottenhamhotspur.com/product/adult-spurs-third-shirt-2020-21/mtss20"
+            role="button"
+            class="button"
+            target="_blank"
+            >Buy</a
+          >
         </td>
       </tr>
     </table>
   </body>
+  <script>
+    function big(x) {
+      x.style.height = "221px";
+      x.style.width = "200px";
+    }
+    function normal(x) {
+      x.style.height = "136px";
+      x.style.width = "150px";
+    }
+  </script>
 </html>

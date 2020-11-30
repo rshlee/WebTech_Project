@@ -4,6 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Season Performance</title>
+    <link rel="stylesheet" href="styles/navbar.css" />
+    <style>
+      table,
+      th,
+      td {
+        border: navy 2px solid;
+        border-collapse: collapse;
+        padding: 15px;
+        margin-left: 5%;
+      }
+      div.relative {
+        position: relative;
+        left: 550px;
+        bottom: 1100px;
+      }
+      div.left{
+        position: relative;
+        right:150px
+      }
+    </style>
   </head>
   <body>
     <h1>Tottenham Media</h1>
@@ -14,9 +34,11 @@
       <li><a href="favs.html">My Favorite Players</a></li>
       <li><a href="merch.html">Merchandise</a></li>
       <li><a href="contact.html">Contact Me</a></li>
+      <li><a href="sitemap.html">Sitemap</a></li>
     </ul>
     <div>
       <h2>English Premier League Standings</h2>
+      <br>
       <table>
         <tr>
           <th>#</th>
@@ -247,10 +269,42 @@
         </tr>
       </table>
     </div>
-    <p>
-        Tottenham Hotspur 2020/21 Top Scorer: Son Heung-Min (6) <img src="images/son.png" alt="Son Heung Min" title="Son Heung Min" height="100">
-        <br>
-        Tottenham Hotspur 2020/21 Top Assister: Harry Kane (6) <img src="images/kanee.png" alt="Harry Kane" title="Harry Kane" height="100">
-    </p>
+    <div class="relative">
+      <p>
+        <strong id="son">Tottenham Hotspur 2020/21 Top Scorer: Son Heung-Min</strong>
+        <br />
+        <img
+          src="images/son.png"
+          alt="Son Heung Min"
+          title="Son Heung Min"
+          height="450"
+          onclick="show(1)"
+        />
+        <br />
+        <strong id="kane">Tottenham Hotspur 2020/21 Top Assister: Harry Kane</strong>
+        <br />
+        <div class="left"><img
+          src="images/kanee.png"
+          alt="Harry Kane"
+          title="Harry Kane"
+          height="450"
+          onclick="show(2)"
+        />
+      </div>
+      </p>
+    </div>
   </body>
+  <script>
+    function show(number){
+      
+      if (number ==1){
+          document.getElementById("son").innerHTML += " (6 goals)";
+        
+      }
+      if (number ==2){
+        document.getElementById("kane").innerHTML += " (6 assists)";
+      }
+    }
+  </script>
+
 </html>

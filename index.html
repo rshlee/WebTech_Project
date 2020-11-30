@@ -3,48 +3,74 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Ryan Lee">
-    <meta name="description" content="This website is a fan page of Tottenham Hotspur Football Club.">
-    <meta name="keywords" content="Ryan Lee, Tottenham, Tottenham Hotspur, football, Premier League, soccer">
+    <meta name="author" content="Ryan Lee" />
+    <meta
+      name="description"
+      content="This website is a fan page of Tottenham Hotspur Football Club."
+    />
+    <meta
+      name="keywords"
+      content="Ryan Lee, Tottenham, Tottenham Hotspur, football, Premier League, soccer"
+    />
     <title>Tottenham Media Home Page</title>
+    <link rel="stylesheet" href="styles/navbar.css" />
     <style>
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
-      h1 {
-        text-align: center;
-        color: navy;
+      .image {
+        flex-basis: 40%;
       }
-      ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        border: 1px solid #e7e7e7;
-        background-color: navy;
-        text-align: center;
-        border: solid navy;
-      }
-      li {
-        float: left;
-      }
-      li a {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
+      .text {
+        padding-left: 20px;
+        margin-bottom: auto;
+        font-size: 25pt;
       }
       img {
-        border-left: navy;
-        border-right: navy;
-        border-bottom: navy;
-        border-style: ridge;
+        border: 2px solid navy;
       }
+      #clockdiv{
+  font-family: sans-serif;
+  color: #fff;
+  display: inline-block;
+  font-weight: 100;
+  text-align: center;
+  font-size: 30px;
+}
+
+#clockdiv > div{
+  padding: 10px;
+  border-radius: 3px;
+  background: #00BF96;
+  display: inline-block;
+}
+
+#clockdiv div > span{
+  padding: 15px;
+  border-radius: 3px;
+  background: #00816A;
+  display: inline-block;
+}
+
+.smalltext{
+  padding-top: 5px;
+  font-size: 16px;
+}
+h2.pos{
+  position: relative;
+  left: 200px;
+  bottom: 300px;
+  color: navy
+}
+#clock{
+  position: relative;
+  left: 650px;
+  bottom: 300px
+}
     </style>
   </head>
-  <!-- I will add the css as an external file later-->
   <body>
     <h1>Tottenham Media</h1>
     <ul>
@@ -54,19 +80,93 @@
       <li><a href="favs.html">My Favorite Players</a></li>
       <li><a href="merch.html">Merchandise</a></li>
       <li><a href="contact.html">Contact Me</a></li>
+      <li><a href="sitemap.html">Sitemap</a></li>
     </ul>
-    <p>
-      Welcome! This page is designed to be a Tottenham Hotspur fanpage - a
-      football team in the English Premier League. On this website, you will be
-      able to find information including the team's performance throughout the
-      season, players' statistics, watch amazing plays, and even purchase the
-      team's merchandise!
-    </p>
-    <img
-      src="images/players.jpg"
-      alt="Players wallpaper"
-      title="Spurs Players"
-      height="700"
-    />
+    <br />
+    <div class="container">
+      <div class="image">
+        <img
+          src="images/players.jpg"
+          alt="Players wallpaper"
+          title="Spurs Players"
+          height="700"
+        />
+      </div>
+
+      <div class="text">
+        <p>
+          Welcome! This page is designed to be a Tottenham Hotspur fanpage - a
+          football team that plays in the English Premier League. On this
+          website, you will be able to find information including the team's
+          performance throughout the season, players' statistics, watch amazing
+          plays, and even purchase the team's merchandise!
+        </p>
+      </div>
+    </div>
+    <h2 class="pos">Countdown Until End of 2020/21 Season!</h2>
+    <div id="clock">
+<div id="clockdiv">
+  <div>
+    <span class="days"></span>
+    <div class="smalltext">Days</div>
+  </div>
+  <div>
+    <span class="hours"></span>
+    <div class="smalltext">Hours</div>
+  </div>
+  <div>
+    <span class="minutes"></span>
+    <div class="smalltext">Minutes</div>
+  </div>
+  <div>
+    <span class="seconds"></span>
+    <div class="smalltext">Seconds</div>
+  </div>
+</div>
+</div>
   </body>
+  <script>
+   function getTimeRemaining(endtime) {
+  const total = Date.parse(endtime) - Date.parse(new Date());
+  const seconds = Math.floor((total / 1000) % 60);
+  const minutes = Math.floor((total / 1000 / 60) % 60);
+  const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+  const days = Math.floor(total / (1000 * 60 * 60 * 24));
+  
+  return {
+    total,
+    days,
+    hours,
+    minutes,
+    seconds
+  };
+}
+
+function initializeClock(id, endtime) {
+  const clock = document.getElementById(id);
+  const daysSpan = clock.querySelector('.days');
+  const hoursSpan = clock.querySelector('.hours');
+  const minutesSpan = clock.querySelector('.minutes');
+  const secondsSpan = clock.querySelector('.seconds');
+
+  function updateClock() {
+    const t = getTimeRemaining(endtime);
+
+    daysSpan.innerHTML = t.days;
+    hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+    if (t.total <= 0) {
+      clearInterval(timeinterval);
+    }
+  }
+
+  updateClock();
+  const timeinterval = setInterval(updateClock, 1000);
+}
+
+const deadline = 'May 23 2021 00:00:00'
+initializeClock('clockdiv', deadline);
+  </script>
 </html>
